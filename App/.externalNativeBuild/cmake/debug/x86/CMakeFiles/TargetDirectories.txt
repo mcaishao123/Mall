@@ -1,3 +1,0 @@
-E:/soft/ASworkspace/Mall/App/.externalNativeBuild/cmake/debug/x86/CMakeFiles/native-lib.dir
-E:/soft/ASworkspace/Mall/App/.externalNativeBuild/cmake/debug/x86/CMakeFiles/edit_cache.dir
-E:/soft/ASworkspace/Mall/App/.externalNativeBuild/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
