@@ -10,6 +10,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/mPhoneEt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="请输入手机号码"
@@ -23,23 +24,26 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/mVerifyCodeEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入短信验证码"/>
 
     <EditText
+        android:id="@+id/mPwdEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入密码（6-20位字母或数字"/>
+        android:hint="请输入密码（6-20位字母或数字）"/>
 
     <EditText
+        android:id="@+id/mConfirmPwdEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请再次输入密码"/>
 
 
     <Button
-        android:id="@+id/regBtn"
+        android:id="@+id/mRegBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
