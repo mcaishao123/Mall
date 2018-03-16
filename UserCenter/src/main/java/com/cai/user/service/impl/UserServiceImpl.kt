@@ -6,11 +6,12 @@ import com.cai.user.data.respository.UserRespository
 import com.cai.user.service.UserService
 import rx.Observable
 import rx.functions.Func1
+import javax.inject.Inject
 
 /**
  * Created by zhengmc on 2018/3/16.
  */
-class UserServiceImpl : UserService{
+class UserServiceImpl @Inject constructor(): UserService{
 
     override fun register(mobile: String, pwd: String, verifyCode: String): Observable<Boolean> {
 
