@@ -1,4 +1,4 @@
-package com.cai.base.ui.activity
+package com.cai.base.ui.fragment
 
 import android.os.Bundle
 import com.cai.base.common.BaseApplication
@@ -8,9 +8,10 @@ import com.cai.base.injection.module.ActivityModule
 import com.cai.base.injection.module.LifecycleProviderModule
 import com.cai.base.presenter.BasePresenter
 import com.cai.base.presenter.view.BaseView
+import com.cai.base.ui.activity.BaseActivity
 import javax.inject.Inject
 
-open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {
+abstract open class BaseMvpFragment<T : BasePresenter<*>> : BaseFragment(), BaseView {
 
     @Inject
     lateinit var mPresenter: T
@@ -36,9 +37,9 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
 
     private fun initActivityInject() {
         activityComponent = DaggerActivityComponent.builder()
-                .appComponent((application as BaseApplication).appComponent)
+                .appComponent((activity.application as BaseApplication).appComponent)
                 .lifecycleProviderModule(LifecycleProviderModule(this))
-                .activityModule(ActivityModule(this))
+                .activityModule(ActivityModule(activity))
                 .build()
     }
 }

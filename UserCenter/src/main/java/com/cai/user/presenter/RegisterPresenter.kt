@@ -18,15 +18,10 @@ class RegisterPresenter @Inject constructor() : BasePresenter<RegisterView>() {
                 .excute(object : BaseSubscriber<Boolean>() {
 
                     override fun onNext(t: Boolean) {
-                        mView.onRegisterResult(t)
+                        if(t)
+                        mView.onRegisterResult("注册成功")
                     }
 
-                    override fun onError(e: Throwable?) {
-                        super.onError(e)
-                        mView.onRegisterResult(false)
-
-                    }
-
-                })
+                },lifecycleProvider)
     }
 }

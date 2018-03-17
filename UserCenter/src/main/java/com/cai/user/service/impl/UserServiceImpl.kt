@@ -1,7 +1,9 @@
 package com.cai.user.service.impl
 
 import com.cai.base.data.protocol.BaseResp
+import com.cai.base.ext.convertBoolean
 import com.cai.base.rx.BaseException
+import com.cai.base.rx.BaseFuncBoolean
 import com.cai.user.data.respository.UserRespository
 import com.cai.user.service.UserService
 import rx.Observable
@@ -13,15 +15,13 @@ import javax.inject.Inject
  */
 class UserServiceImpl @Inject constructor(): UserService{
 
+    @Inject
+    lateinit var userRspository: UserRespository
+
     override fun register(mobile: String, pwd: String, verifyCode: String): Observable<Boolean> {
 
-        return UserRespository().register(mobile, pwd, verifyCode)
-                .flatMap(Func1<BaseResp<String>, Observable<Boolean>> { t ->
-                    if (t.status != 0) {
-                        return@Func1 Observable.error(BaseException(t.status, t.message))
-                    }
-                    Observable.just(true)
-                })
+        return userRspository.register(mobile, pwd, verifyCode)
+                .convertBoolean()
     }
 
 

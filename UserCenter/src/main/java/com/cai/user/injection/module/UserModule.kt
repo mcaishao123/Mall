@@ -1,5 +1,6 @@
 package com.cai.user.injection.module
 
+import com.cai.base.injection.PerComponentScope
 import com.cai.user.service.UserService
 import com.cai.user.service.impl.UserServiceImpl
 import dagger.Module
