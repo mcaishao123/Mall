@@ -8,6 +8,7 @@ import com.cai.base.injection.module.ActivityModule
 import com.cai.base.injection.module.LifecycleProviderModule
 import com.cai.base.presenter.BasePresenter
 import com.cai.base.presenter.view.BaseView
+import com.cai.base.wigets.ProgressLoading
 import javax.inject.Inject
 
 open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {
@@ -16,6 +17,8 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
     lateinit var mPresenter: T
 
     lateinit var activityComponent: ActivityComponent
+
+    lateinit var mLoadingDialog: ProgressLoading
 
     override fun showLoading() {
     }
@@ -32,6 +35,8 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
         super.onCreate(savedInstanceState)
         initActivityInject()
         injectComponent()
+        mLoadingDialog = ProgressLoading.create(this)
+
     }
 
     private fun initActivityInject() {

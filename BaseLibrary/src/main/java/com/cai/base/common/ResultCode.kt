@@ -1,9 +1,9 @@
 package com.cai.base.common
 
-/**
- * Created by zhengmc on 2018/3/17.
+/*
+    网络响应码
  */
-class ResultCode{
+class ResultCode {
     companion object {
         const val SUCCESS = 0
     }
