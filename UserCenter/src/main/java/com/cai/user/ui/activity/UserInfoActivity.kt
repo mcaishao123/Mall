@@ -46,7 +46,7 @@ class UserInfoActivity:BaseTakePhotoActivity<UserInfoPresenter>(), UserInfoView,
 
     override fun onClick(v: View) {
         when(v.id){
-            R.id.mUserIconIv->{
+            R.id.mUserIconView->{
                 showAlertView()
             }
         }

@@ -1,10 +1,16 @@
 package com.cai.base.ui.activity
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.util.Log
+import android.widget.Toast
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bigkoo.alertview.AlertView
 import com.bigkoo.alertview.OnItemClickListener
@@ -25,14 +31,14 @@ import org.jetbrains.anko.toast
 import java.io.File
 import javax.inject.Inject
 
+
 /*
     存在选择图片的Activity基础封装
  */
 abstract open class BaseTakePhotoActivity<T : BasePresenter<*>> : BaseActivity(), BaseView, TakePhoto.TakeResultListener {
+    private val REQUEST_CODE_ASK_CAMERA = 123
 
     private lateinit var mTakePhoto:TakePhoto
-
-    private lateinit var mTempFile: File
 
     @Inject
     lateinit var mPresenter: T
@@ -100,8 +106,7 @@ abstract open class BaseTakePhotoActivity<T : BasePresenter<*>> : BaseActivity()
             mTakePhoto.onEnableCompress(CompressConfig.ofDefaultConfig(),false)
             when (position) {
                 0 -> {
-                    createTempFile()
-                    mTakePhoto.onPickFromCapture(Uri.fromFile(mTempFile))
+                    requestPermissions()
                 }
                 1 -> mTakePhoto.onPickFromGallery()
             }
@@ -143,13 +148,57 @@ abstract open class BaseTakePhotoActivity<T : BasePresenter<*>> : BaseActivity()
     /*
         新建临时文件
      */
-    fun createTempFile(){
+    fun createTempFile(): File {
         val tempFileName = "${DateUtils.curTime}.png"
         if (Environment.MEDIA_MOUNTED == Environment.getExternalStorageState()){
-            this.mTempFile = File(Environment.getExternalStorageDirectory(),tempFileName)
-            return
+            return File(Environment.getExternalStorageDirectory(), tempFileName)
+
         }
 
-        this.mTempFile = File(filesDir,tempFileName)
+        return File(filesDir, tempFileName)
+
     }
+
+
+    fun requestPermissions() {
+        val checkCallPhonePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+                Toast.makeText(this, "shouldShowRequestPermissionRationale", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(this)
+                        .setTitle("提示")
+                        .setMessage("应用需要开启拍照的权限，是否继续？")
+                        .setPositiveButton("确定", { dialog, which -> ActivityCompat.requestPermissions(this@BaseTakePhotoActivity, arrayOf(Manifest.permission.CAMERA), REQUEST_CODE_ASK_CAMERA) })
+                        .setNegativeButton("取消", null).show()
+            } else {
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), REQUEST_CODE_ASK_CAMERA)
+            }
+
+        } else {
+            mTakePhoto.onPickFromCapture(Uri.fromFile(createTempFile()))
+        }
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
+                                            grantResults: IntArray) {
+
+
+        when (requestCode) {
+            REQUEST_CODE_ASK_CAMERA -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted 授予权限
+                mTakePhoto.onPickFromCapture(Uri.fromFile(createTempFile()))
+            } else {
+                // Permission Denied 权限被拒绝
+                Toast.makeText(this@BaseTakePhotoActivity, "Permission Denied",
+                        Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+            }
+        }
+
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
 }
