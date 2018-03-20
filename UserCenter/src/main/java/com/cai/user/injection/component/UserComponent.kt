@@ -3,6 +3,7 @@ package com.cai.user.injection.component
 import com.cai.base.injection.PerComponentScope
 import com.cai.base.injection.component.ActivityComponent
 import com.cai.user.injection.module.UserModule
+import com.cai.user.ui.activity.LoginActivity
 import com.cai.user.ui.activity.RegisterActivity
 import dagger.Component
 
@@ -11,5 +12,6 @@ import dagger.Component
 interface UserComponent {
 
     fun inject(activity: RegisterActivity)
+    fun inject(activity: LoginActivity)
 
 }

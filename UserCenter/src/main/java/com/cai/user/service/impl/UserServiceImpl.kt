@@ -1,13 +1,11 @@
 package com.cai.user.service.impl
 
-import com.cai.base.data.protocol.BaseResp
+import com.cai.base.ext.convert
 import com.cai.base.ext.convertBoolean
-import com.cai.base.rx.BaseException
-import com.cai.base.rx.BaseFuncBoolean
+import com.cai.user.data.protocol.UserInfo
 import com.cai.user.data.respository.UserRespository
 import com.cai.user.service.UserService
 import rx.Observable
-import rx.functions.Func1
 import javax.inject.Inject
 
 /**
@@ -24,5 +22,10 @@ class UserServiceImpl @Inject constructor(): UserService{
                 .convertBoolean()
     }
 
+
+    override fun login(mobile: String, pwd: String, pushId: String): Observable<UserInfo> {
+        return userRspository.login(mobile, pwd, pushId)
+                .convert()
+    }
 
 }
