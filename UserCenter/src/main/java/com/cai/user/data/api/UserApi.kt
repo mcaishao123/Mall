@@ -1,9 +1,7 @@
 package com.cai.user.data.api
 
 import com.cai.base.data.protocol.BaseResp
-import com.cai.user.data.protocol.LoginReq
-import com.cai.user.data.protocol.RegisterReq
-import com.cai.user.data.protocol.UserInfo
+import com.cai.user.data.protocol.*
 import retrofit2.http.Body
 import retrofit2.http.POST
 import rx.Observable
@@ -16,4 +14,11 @@ interface UserApi {
 
     @POST("userCenter/login")
     fun login(@Body req: LoginReq): Observable<BaseResp<UserInfo>>
+
+    @POST("userCenter/forgetPwd")
+    fun forgetPwd(@Body req: ForgetPwd): Observable<BaseResp<Boolean>>
+
+    @POST("userCenter/resetPwd")
+    fun resetPwd(@Body req: ResetPwdReq):Observable<BaseResp<String>>
+
 }

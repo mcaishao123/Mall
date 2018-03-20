@@ -6,6 +6,10 @@ import com.cai.user.data.protocol.UserInfo
 /**
  * Created by zhengmc on 2018/3/19.
  */
+
+/*
+    登录
+ */
 interface LoginView: BaseView {
 
     fun onLoginResult(result: UserInfo)

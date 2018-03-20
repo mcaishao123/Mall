@@ -3,9 +3,7 @@ package com.cai.user.data.respository
 import com.cai.base.data.net.RetrofitFactory
 import com.cai.base.data.protocol.BaseResp
 import com.cai.user.data.api.UserApi
-import com.cai.user.data.protocol.LoginReq
-import com.cai.user.data.protocol.RegisterReq
-import com.cai.user.data.protocol.UserInfo
+import com.cai.user.data.protocol.*
 import rx.Observable
 import javax.inject.Inject
 
@@ -21,5 +19,18 @@ class UserRespository @Inject constructor() {
         return RetrofitFactory.instance
                 .create(UserApi::class.java)
                 .login(LoginReq(mobile, pwd, pushId))
+    }
+
+    fun forgetPwd(mobile: String, verifyCode: String): Observable<BaseResp<Boolean>> {
+        return RetrofitFactory.instance
+                .create(UserApi::class.java)
+                .forgetPwd(ForgetPwd(mobile, verifyCode))
+    }
+
+    /*
+        重置密码
+     */
+    fun resetPwd(mobile:String,pwd:String): Observable<BaseResp<String>>{
+        return RetrofitFactory.instance.create(UserApi::class.java).resetPwd(ResetPwdReq(mobile,pwd))
     }
 }

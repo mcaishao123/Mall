@@ -17,7 +17,6 @@ class UserServiceImpl @Inject constructor(): UserService{
     lateinit var userRspository: UserRespository
 
     override fun register(mobile: String, pwd: String, verifyCode: String): Observable<Boolean> {
-
         return userRspository.register(mobile, pwd, verifyCode)
                 .convertBoolean()
     }
@@ -26,6 +25,15 @@ class UserServiceImpl @Inject constructor(): UserService{
     override fun login(mobile: String, pwd: String, pushId: String): Observable<UserInfo> {
         return userRspository.login(mobile, pwd, pushId)
                 .convert()
+    }
+
+    override fun forgetPwd(mobile: String, verifyCode: String): Observable<Boolean> {
+        return userRspository.forgetPwd(mobile, verifyCode)
+                .convertBoolean()
+    }
+
+    override fun resetPwd(mobile: String, pwd: String): Observable<Boolean> {
+        return userRspository.resetPwd(mobile, pwd).convertBoolean()
     }
 
 }
