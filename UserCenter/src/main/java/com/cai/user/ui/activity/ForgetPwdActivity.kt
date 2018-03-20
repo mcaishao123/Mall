@@ -11,6 +11,7 @@ import com.cai.user.injection.module.UserModule
 import com.cai.user.presenter.ForgetPwdPresenter
 import com.cai.user.presenter.view.ForgetPwdView
 import kotlinx.android.synthetic.main.activity_forget_pwd.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class ForgetPwdActivity : BaseMvpActivity<ForgetPwdPresenter>(), ForgetPwdView, View.OnClickListener {
@@ -18,6 +19,7 @@ class ForgetPwdActivity : BaseMvpActivity<ForgetPwdPresenter>(), ForgetPwdView, 
 
     override fun onForgetPwd(result: String) {
         toast(result)
+        startActivity<RegisterActivity>()
     }
 
     override fun onError(text: String) {
