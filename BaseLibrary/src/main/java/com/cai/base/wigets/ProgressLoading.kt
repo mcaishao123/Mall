@@ -5,7 +5,7 @@ import android.content.Context
 import android.graphics.drawable.AnimationDrawable
 import android.view.Gravity
 import android.widget.ImageView
-import com.kotlin.base.R
+import com.cai.base.R
 import org.jetbrains.anko.find
 
 /*

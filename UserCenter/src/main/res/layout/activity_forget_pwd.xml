@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               style="@style/MatchMatch.Vertical.Common">
 
-    <com.kotlin.base.widgets.HeaderBar
+    <com.cai.base.widgets.HeaderBar
         android:id="@+id/mHeaderBar"
         style="@style/MatchWrap"
         app:titleText="忘记密码"/>

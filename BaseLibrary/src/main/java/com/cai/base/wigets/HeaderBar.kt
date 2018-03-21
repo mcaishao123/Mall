@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import com.kotlin.base.R
+import com.cai.base.R
 import com.cai.base.ext.onClick
 
 import kotlinx.android.synthetic.main.layout_header_bar.view.*

@@ -5,7 +5,7 @@ import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.Button
-import com.kotlin.base.R
+import com.cai.base.R
 
 /*
     获取验证码按钮

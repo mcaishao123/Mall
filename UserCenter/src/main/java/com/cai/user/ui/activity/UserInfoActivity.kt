@@ -16,23 +16,23 @@ import com.cai.user.injection.module.UserModule
 import com.cai.user.presenter.UserInfoPresenter
 import com.cai.user.presenter.view.UserInfoView
 import com.jph.takephoto.model.TResult
-import com.kotlin.user.utils.UserPrefsUtils
+import com.cai.user.utils.UserPrefsUtils
 import com.qiniu.android.storage.UploadManager
 import kotlinx.android.synthetic.main.activity_user_info.*
 import org.jetbrains.anko.toast
 
-class UserInfoActivity:BaseTakePhotoActivity<UserInfoPresenter>(), UserInfoView,View.OnClickListener {
+class UserInfoActivity : BaseTakePhotoActivity<UserInfoPresenter>(), UserInfoView, View.OnClickListener {
 
     private val mUploadManager: UploadManager by lazy { UploadManager() }
 
-    private var mLocalFileUrl:String? = null
-    private var mRemoteFileUrl:String? = null
+    private var mLocalFileUrl: String? = null
+    private var mRemoteFileUrl: String? = null
 
-    private var mUserIcon:String? = null
-    private var mUserName:String? = null
-    private var mUserMobile:String? = null
-    private var mUserGender:String? = null
-    private var mUserSign:String? = null
+    private var mUserIcon: String? = null
+    private var mUserName: String? = null
+    private var mUserMobile: String? = null
+    private var mUserGender: String? = null
+    private var mUserSign: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,8 +113,8 @@ class UserInfoActivity:BaseTakePhotoActivity<UserInfoPresenter>(), UserInfoView,
     }
 
     override fun onClick(v: View) {
-        when(v.id){
-            R.id.mUserIconView->{
+        when (v.id) {
+            R.id.mUserIconView -> {
                 showAlertView()
             }
         }

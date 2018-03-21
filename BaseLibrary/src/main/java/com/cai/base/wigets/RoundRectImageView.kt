@@ -10,7 +10,7 @@ import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.widget.ImageView
-import com.kotlin.base.R
+import com.cai.base.R
 import org.jetbrains.anko.dimen
 
 /*

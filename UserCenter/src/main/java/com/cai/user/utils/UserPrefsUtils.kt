@@ -1,4 +1,4 @@
-package com.kotlin.user.utils
+package com.cai.user.utils
 
 import com.cai.base.common.BaseConstant
 import com.cai.base.utils.AppPrefsUtils

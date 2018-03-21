@@ -6,7 +6,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 import com.ashokvarma.bottomnavigation.ShapeBadgeItem
 import com.ashokvarma.bottomnavigation.TextBadgeItem
-import com.kotlin.base.R
+import com.cai.base.R
 
 /*
     底部导航

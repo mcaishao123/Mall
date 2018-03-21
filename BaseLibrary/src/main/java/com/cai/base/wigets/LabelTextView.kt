@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
-import com.kotlin.base.R
+import com.cai.base.R
 import kotlinx.android.synthetic.main.layout_label_textview.view.*
 
 
