@@ -27,10 +27,11 @@ class UserRespository @Inject constructor() {
                 .forgetPwd(ForgetPwd(mobile, verifyCode))
     }
 
-    /*
-        重置密码
-     */
     fun resetPwd(mobile:String,pwd:String): Observable<BaseResp<String>>{
         return RetrofitFactory.instance.create(UserApi::class.java).resetPwd(ResetPwdReq(mobile,pwd))
+    }
+
+    fun editUser(userIcon:String,userName:String,userGender:String,userSign:String):Observable<BaseResp<UserInfo>>{
+        return RetrofitFactory.instance.create(UserApi::class.java).editUser(EditUserReq(userIcon,userName,userGender,userSign))
     }
 }
