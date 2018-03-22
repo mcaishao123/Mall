@@ -89,4 +89,7 @@ dependencies {
     compile "com.alibaba:arouter-api:$arouter_api_version"
     //BadgeView
     compile 'q.rorbin:badgeview:1.1.2'
+
+    compile 'ren.qinc.numberbutton:numberbutton:0.0.1'
+
 }
