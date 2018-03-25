@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               style="@style/MatchMatch.Vertical.Common">
 
-    <com.cai.base.wigets.HeaderBar
+    <com.cai.base.widgets.HeaderBar
         android:id="@id/mHeaderBar"
         style="@style/MatchWrap"
         app:rightText="@string/common_save"

@@ -2,7 +2,6 @@ package com.cai.base.ext
 
 import android.graphics.drawable.AnimationDrawable
 import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -12,7 +11,7 @@ import com.cai.base.rx.BaseFunc
 import com.cai.base.rx.BaseFuncBoolean
 import com.cai.base.rx.BaseSubscriber
 import com.cai.base.utils.GlideUtils
-import com.cai.base.wigets.DefaultTextWatcher
+import com.cai.base.widgets.DefaultTextWatcher
 import com.kennyc.view.MultiStateView
 import com.cai.base.R
 import com.trello.rxlifecycle.LifecycleProvider

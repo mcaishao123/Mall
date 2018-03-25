@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.cai.base.common.AppManager
 import com.cai.base.ui.activity.BaseActivity
+import com.cai.goodscenter.ui.fragment.CategoryFragment
 import com.cai.mall.R
 import com.cai.mall.ui.fragment.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +19,7 @@ class MainActivity : BaseActivity() {
     //主界面Fragment
     private val mHomeFragment by lazy { HomeFragment() }
     //商品分类Fragment
-    private val mCategoryFragment by lazy { HomeFragment() }
+    private val mCategoryFragment by lazy { CategoryFragment() }
     //购物车Fragment
     private val mCartFragment by lazy { HomeFragment() }
     //消息Fragment

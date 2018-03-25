@@ -30,7 +30,7 @@
 
             <View style="@style/DividerFixedWidth.MarginTopBottom"/>
 
-            <com.cai.base.wigets.VerifyButton
+            <com.cai.base.widgets.VerifyButton
                 android:id="@+id/mVerifyCodeBtn"
                 style="@style/WrapMatch"
                 android:background="@null"

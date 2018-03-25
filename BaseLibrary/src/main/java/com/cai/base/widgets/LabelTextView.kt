@@ -1,4 +1,4 @@
-package com.cai.base.wigets
+package com.cai.base.widgets
 
 import android.content.Context
 import android.util.AttributeSet

@@ -8,7 +8,7 @@ import com.cai.base.injection.module.ActivityModule
 import com.cai.base.injection.module.LifecycleProviderModule
 import com.cai.base.presenter.BasePresenter
 import com.cai.base.presenter.view.BaseView
-import com.cai.base.wigets.ProgressLoading
+import com.cai.base.widgets.ProgressLoading
 import javax.inject.Inject
 
 open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {

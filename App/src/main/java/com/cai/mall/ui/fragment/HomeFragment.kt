@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.cai.base.ext.onClick
 import com.cai.base.ui.fragment.BaseFragment
-import com.cai.base.wigets.BannerImageLoader
+import com.cai.base.widgets.BannerImageLoader
 import com.cai.mall.R
 import com.cai.mall.common.*
 import com.cai.mall.ui.adapter.TopicAdapter

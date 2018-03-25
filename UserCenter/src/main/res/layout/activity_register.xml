@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical.Common">
 
-    <com.cai.base.wigets.HeaderBar
+    <com.cai.base.widgets.HeaderBar
         android:id="@+id/mHeaderBar"
         style="@style/MatchWrap"
         app:titleText="注册" />
@@ -29,7 +29,7 @@
 
             <View style="@style/DividerFixedWidth.MarginTopBottom" />
 
-            <com.cai.base.wigets.VerifyButton
+            <com.cai.base.widgets.VerifyButton
                 android:id="@+id/mVerifyCodeBtn"
                 style="@style/WrapMatch"
                 android:background="@null"

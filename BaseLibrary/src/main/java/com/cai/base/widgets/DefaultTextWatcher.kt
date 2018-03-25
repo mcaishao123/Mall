@@ -1,4 +1,4 @@
-package com.cai.base.wigets
+package com.cai.base.widgets
 
 import android.text.Editable
 import android.text.TextWatcher

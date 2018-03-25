@@ -22,7 +22,7 @@ import com.cai.base.injection.module.LifecycleProviderModule
 import com.cai.base.presenter.BasePresenter
 import com.cai.base.presenter.view.BaseView
 import com.cai.base.utils.DateUtils
-import com.cai.base.wigets.ProgressLoading
+import com.cai.base.widgets.ProgressLoading
 import com.jph.takephoto.app.TakePhoto
 import com.jph.takephoto.app.TakePhotoImpl
 import com.jph.takephoto.compress.CompressConfig
