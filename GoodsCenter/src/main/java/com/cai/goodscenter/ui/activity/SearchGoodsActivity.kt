@@ -1,5 +1,7 @@
 package com.cai.goodscenter.ui.activity
 
-class SearchGoodsActivity {
+import com.cai.base.ui.activity.BaseActivity
+
+class SearchGoodsActivity: BaseActivity() {
 
 }

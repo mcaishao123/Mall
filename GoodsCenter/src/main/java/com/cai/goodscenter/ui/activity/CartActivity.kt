@@ -1,5 +1,8 @@
 package com.cai.goodscenter.ui.activity
 
-class CartActivity {
+import com.cai.base.ui.activity.BaseActivity
+import com.cai.base.ui.activity.BaseMvpActivity
+
+class CartActivity:BaseActivity() {
 
 }
